@@ -1,2 +1,4 @@
 # AWS-Detection-Auto-Remediation-Lab
-A self-contained AWS environment, defined entirely in Terraform, that detects risky cloud activity and misconfiguration, alerts a responder, and automatically remediates the issue. then documents the whole incident lifecycle the way a real security team would.
+This lab builds a small but realistic AWS environment with deliberately weak spots, then closes the loop on them. Terraform provisions the account baseline (CloudTrail, GuardDuty, Security Hub, IAM Access Analyzer, AWS Config) plus a target VPC with an EC2 instance and an S3 bucket. A simulation harness introduces controlled misconfigurations — an SSH rule open to the internet, a public bucket policy, GuardDuty sample findings. EventBridge routes the resulting events to Python Lambda functions that revoke the rule, re-lock the bucket, or quarantine the instance, while SNS notifies the responder. Every remediation is guarded by tag-based scoping, loop protection, and least-privilege IAM. The repo also contains the threat model, incident reports, and runbooks that accompany the automation.
+
+---
