@@ -6,3 +6,8 @@ variable "region" {
 variable "account_id" {
   type = string
 }
+
+variable "alert_emails" {
+  type = list(string)
+}
+
