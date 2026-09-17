@@ -10,6 +10,7 @@ terraform {
 
 provider "aws" {
   region = var.region
+  allowed_account_ids = ["509306733326"]
 }
 
 resource "random_id" "suffix" {
