@@ -50,12 +50,6 @@ resource "aws_cloudwatch_event_target" "sns" {
       account     = "$.detail.accountId"
       region      = "$.detail.region"
     }
-    input_template = <<EOF
-"GuardDuty finding in <account> (<region>)
-Severity: <severity>
-Type: <type>
-
-<description>"
-EOF
+    input_template = "\"GuardDuty finding in <account> (<region>) | Severity: <severity> | Type: <type> | <description>\""
   }
 }
