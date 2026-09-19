@@ -1,1 +1,2 @@
-account_id = "123456789012"
+account_id   = "123456789012"
+alert_emails = ["khoss010@ucr.edu", "clope375@ucr.edu"]
